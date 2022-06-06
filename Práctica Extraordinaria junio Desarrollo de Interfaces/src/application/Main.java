@@ -8,6 +8,7 @@ import javafx.stage.Stage;
 import view.MenuController;
 
 public class Main extends Application {
+    private Stage primaryStage;
 	private BorderPane rootLayout;
 
 	@Override
@@ -15,7 +16,7 @@ public class Main extends Application {
 		try {
 			// Carga el diseño del archivo FXML en la variable rootLayout
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(Main.class.getResource("Menu.fxml"));
+			loader.setLocation(Main.class.getResource("/view/RootLayout.fxml"));
 			rootLayout = (BorderPane) loader.load();
 
 			// Pasamos al controlador de menu el objeto con el BorderPane principal
@@ -35,6 +36,5 @@ public class Main extends Application {
 	public static void main(String[] args) {
 		launch(args);
 	}
-
 
 }
