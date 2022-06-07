@@ -5,24 +5,20 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.BorderPane?>
 
-
-<BorderPane maxWidth="500.0" prefHeight="500.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="view.MenuController">
+<BorderPane prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.MenuController">
    <top>
-      <MenuBar prefHeight="500.0" prefWidth="500.0" BorderPane.alignment="CENTER">
+      <MenuBar BorderPane.alignment="CENTER">
         <menus>
-          <Menu mnemonicParsing="false" text="Tabla">
+          <Menu mnemonicParsing="false" text="Datos y Mantenimiento">
             <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
+                  <MenuItem mnemonicParsing="false" onAction="#abrirDatos" text="Abrir" />
+                  <MenuItem mnemonicParsing="false" onAction="#cerrarPantalla" text="Cerrar" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
+          <Menu mnemonicParsing="false" text="Tutorial">
             <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Help">
-            <items>
-              <MenuItem mnemonicParsing="false" text="About" />
+              <MenuItem mnemonicParsing="false" onAction="#abrirTutorial" text="Abrir" />
+              <MenuItem mnemonicParsing="false" onAction="#cerrarPantalla" text="Cerrar" />
             </items>
           </Menu>
         </menus>

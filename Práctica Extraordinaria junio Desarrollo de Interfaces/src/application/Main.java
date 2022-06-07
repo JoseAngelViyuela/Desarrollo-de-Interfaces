@@ -47,7 +47,7 @@ public class Main extends Application {
 			// Mostramos la escena del BorderPane de la variable rootLayot
 			Scene scene = new Scene(rootLayout);
 			primaryStage.setScene(scene);
-			primaryStage.setTitle("Ejemplo sobre controles");
+			primaryStage.setTitle("Practica Final");
 			primaryStage.show();
 		} catch (Exception e) {
 			e.printStackTrace();

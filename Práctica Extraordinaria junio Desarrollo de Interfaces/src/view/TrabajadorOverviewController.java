@@ -30,7 +30,6 @@ public class TrabajadorOverviewController {
     @FXML
     private Label birthdayLabel;
 
-    // Reference to the main application.
     private Main mainApp;
 
     public TrabajadorOverviewController() {
@@ -55,23 +54,22 @@ public class TrabajadorOverviewController {
     public void setMain(Main mainApp) {
         this.mainApp = mainApp;
 
-        // Add observable list data to the table
         trabajadorTable.setItems(mainApp.getTrabajadorData());
+    }
+
+    public void setTrabajadorTable(TableView<Trabajador> trabajadorTable) {
+        this.trabajadorTable = trabajadorTable;
     }
 
     private void showPersonDetails(Trabajador trabajador) {
         if (trabajador != null) {
-            // Fill the labels with info from the person object.
             firstNameLabel.setText(trabajador.getFirstName());
             lastNameLabel.setText(trabajador.getLastName());
             streetLabel.setText(trabajador.getStreet());
             postalCodeLabel.setText(Integer.toString(trabajador.getPostalCode()));
             cityLabel.setText(trabajador.getCity());
             birthdayLabel.setText(DateUtil.format(trabajador.getBirthday()));
-            // TODO: We need a way to convert the birthday into a String!
-            // birthdayLabel.setText(...);
         } else {
-            // Person is null, remove all the text.
             firstNameLabel.setText("");
             lastNameLabel.setText("");
             streetLabel.setText("");
