@@ -68,7 +68,7 @@ public class TrabajadorOverviewController {
             lastNameLabel.setText("");
             streetLabel.setText("");
             cityLabel.setText("");
-            //workShiftLabel.setText("");
+            workShiftLabel.setText("");
             languagesLabel.setText("");
         }
     }
