@@ -1,5 +1,6 @@
 package view;
 
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
@@ -24,13 +25,11 @@ public class TrabajadorOverviewController {
     @FXML
     private Label streetLabel;
     @FXML
-    private Label postalCodeLabel;
-    @FXML
     private Label cityLabel;
     @FXML
-    private Label birthdayLabel;
-
-    private Main mainApp;
+    private Label workShiftLabel;
+    @FXML
+    private Label languagesLabel;
 
     public TrabajadorOverviewController() {
     }
@@ -51,14 +50,9 @@ public class TrabajadorOverviewController {
                 (observable, oldValue, newValue) -> showPersonDetails(newValue));
     }
 
-    public void setMain(Main mainApp) {
-        this.mainApp = mainApp;
+    public void setTrabajadorTable(ObservableList<Trabajador> trabajadorData) {
+        this.trabajadorTable.setItems(trabajadorData);;
 
-        trabajadorTable.setItems(mainApp.getTrabajadorData());
-    }
-
-    public void setTrabajadorTable(TableView<Trabajador> trabajadorTable) {
-        this.trabajadorTable = trabajadorTable;
     }
 
     private void showPersonDetails(Trabajador trabajador) {
@@ -66,16 +60,16 @@ public class TrabajadorOverviewController {
             firstNameLabel.setText(trabajador.getFirstName());
             lastNameLabel.setText(trabajador.getLastName());
             streetLabel.setText(trabajador.getStreet());
-            postalCodeLabel.setText(Integer.toString(trabajador.getPostalCode()));
             cityLabel.setText(trabajador.getCity());
-            birthdayLabel.setText(DateUtil.format(trabajador.getBirthday()));
+            workShiftLabel.setText(trabajador.getTurno());
+            languagesLabel.setText(trabajador.getIdiomas());
         } else {
             firstNameLabel.setText("");
             lastNameLabel.setText("");
             streetLabel.setText("");
-            postalCodeLabel.setText("");
             cityLabel.setText("");
-            birthdayLabel.setText("");
+            //workShiftLabel.setText("");
+            languagesLabel.setText("");
         }
     }
 

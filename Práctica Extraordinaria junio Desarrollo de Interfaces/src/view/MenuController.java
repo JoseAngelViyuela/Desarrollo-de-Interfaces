@@ -3,6 +3,8 @@ package view;
 import java.io.IOException;
 
 import application.Main;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,10 +19,20 @@ public class MenuController {
 
     private Main mainApp;
 
+	private ObservableList<Trabajador> trabajadorData = FXCollections.observableArrayList();
+
     private TableView<Trabajador> trabajadorTable;
 
     @FXML
     private void initialize() {
+		trabajadorData.add(new Trabajador("Antonio", "García"));
+		trabajadorData.add(new Trabajador("María Carmen", "Rodríguez"));
+		trabajadorData.add(new Trabajador("María", "González"));
+		trabajadorData.add(new Trabajador("Manuel", "Fernández"));
+		trabajadorData.add(new Trabajador("José", "López"));
+		trabajadorData.add(new Trabajador("Francisco", "Martínez"));
+		trabajadorData.add(new Trabajador("Carmen", "Sánchez"));
+		trabajadorData.add(new Trabajador("David", "Pérez"));
     }
 
     @FXML
@@ -33,7 +45,7 @@ public class MenuController {
             rootLayout.setCenter(abrir);
 
             TrabajadorOverviewController controller = loader.getController();
-            controller.setTrabajadorTable(trabajadorTable);;
+            controller.setTrabajadorTable(trabajadorData);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -69,12 +81,9 @@ public class MenuController {
         this.trabajadorTable = trabajadorTable;
     }
 
-    public void setMain(Main mainApp) {
-        this.mainApp = mainApp;
-
-        trabajadorTable.setItems(mainApp.getTrabajadorData());
-    }
-
+	public ObservableList<Trabajador> getTrabajadorData() {
+		return trabajadorData;
+	}
 
     public BorderPane getRootLayout() {
         return rootLayout;

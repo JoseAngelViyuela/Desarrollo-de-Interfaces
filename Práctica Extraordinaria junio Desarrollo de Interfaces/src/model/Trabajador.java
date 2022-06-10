@@ -14,9 +14,9 @@ public class Trabajador{
 	private final StringProperty firstName;
 	private final StringProperty lastName;
 	private final StringProperty street;
-	private final IntegerProperty postalCode;
 	private final StringProperty city;
-	private final ObjectProperty<LocalDate> birthday;
+	private final StringProperty turno;
+	private final StringProperty idiomas;
 
 	public Trabajador() {
 		this(null, null);
@@ -26,10 +26,10 @@ public class Trabajador{
 		this.firstName = new SimpleStringProperty(firstName);
 		this.lastName = new SimpleStringProperty(lastName);
 
-		this.street = new SimpleStringProperty("some street");
-		this.postalCode = new SimpleIntegerProperty(1234);
-		this.city = new SimpleStringProperty("some city");
-		this.birthday = new SimpleObjectProperty<LocalDate>(LocalDate.of(1999, 2, 21));
+		this.street = new SimpleStringProperty("Calle X");
+		this.city = new SimpleStringProperty("Madrid");
+		this.turno = new SimpleStringProperty("Mañana");
+		this.idiomas = new SimpleStringProperty("Español");
 	}
 
 	public String getFirstName() {
@@ -68,18 +68,6 @@ public class Trabajador{
 		return street;
 	}
 
-	public int getPostalCode() {
-		return postalCode.get();
-	}
-
-	public void setPostalCode(int postalCode) {
-		this.postalCode.set(postalCode);
-	}
-
-	public IntegerProperty postalCodeProperty() {
-		return postalCode;
-	}
-
 	public String getCity() {
 		return city.get();
 	}
@@ -92,16 +80,28 @@ public class Trabajador{
 		return city;
 	}
 
-	public LocalDate getBirthday() {
-		return birthday.get();
+	public String getTurno() {
+		return turno.get();
 	}
 
-	public void setBirthday(LocalDate birthday) {
-		this.birthday.set(birthday);
+	public void setTurno(String turno) {
+		this.turno.set(turno);
 	}
 
-	public ObjectProperty<LocalDate> birthdayProperty() {
-		return birthday;
+	public StringProperty turnoProperty() {
+		return turno;
+	}
+
+	public String getIdiomas() {
+		return idiomas.get();
+	}
+
+	public void setIdiomas(String idiomas) {
+		this.idiomas.set(idiomas);
+	}
+
+	public StringProperty idiomasProperty() {
+		return idiomas;
 	}
 
 }

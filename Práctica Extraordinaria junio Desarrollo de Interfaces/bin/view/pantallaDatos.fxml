@@ -42,18 +42,18 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Label text="Campo1" />
-                        <Label text="Campo2" GridPane.rowIndex="1" />
-                        <Label text="Campo3" GridPane.rowIndex="2" />
-                        <Label text="Campo4" GridPane.rowIndex="3" />
-                        <Label text="Campo5" GridPane.rowIndex="4" />
-                        <Label text="Campo6" GridPane.rowIndex="5" />
+                        <Label text="Nombre" />
+                        <Label text="Apellido" GridPane.rowIndex="1" />
+                        <Label text="Oficina" GridPane.rowIndex="2" />
+                        <Label text="Ciudad" GridPane.rowIndex="3" />
+                        <Label text="Turno" GridPane.rowIndex="4" />
+                        <Label text="Idiomas" GridPane.rowIndex="5" />
                         <Label fx:id="firstNameLabel" text="Label" GridPane.columnIndex="1" />
                         <Label fx:id="lastNameLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         <Label fx:id="streetLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                         <Label fx:id="cityLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <Label fx:id="postalCodeLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                        <Label fx:id="birthdayLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <Label fx:id="workShiftLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label fx:id="languagesLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                      </children>
                   </GridPane>
                   <HBox layoutX="209.0" layoutY="248.0" AnchorPane.leftAnchor="90.0" AnchorPane.rightAnchor="60.0">
