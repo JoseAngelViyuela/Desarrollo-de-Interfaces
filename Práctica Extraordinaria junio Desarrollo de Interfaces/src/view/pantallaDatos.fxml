@@ -58,13 +58,13 @@
                   </GridPane>
                   <HBox layoutX="209.0" layoutY="248.0" AnchorPane.leftAnchor="90.0" AnchorPane.rightAnchor="60.0">
                      <children>
-                        <Button mnemonicParsing="false" text="Añadir Dato" />
-                        <Button mnemonicParsing="false" text="Editar Dato">
+                        <Button mnemonicParsing="false" onAction="#handleNewTrabajador" text="Añadir Dato" />
+                        <Button mnemonicParsing="false" onAction="#handleEditTrabajador" text="Editar Dato">
                            <HBox.margin>
                               <Insets left="10.0" right="10.0" />
                            </HBox.margin>
                         </Button>
-                        <Button mnemonicParsing="false" text="Eliminar Dato" />
+                        <Button mnemonicParsing="false" onAction="#handleDeleteTrabajador" text="Eliminar Dato" />
                      </children>
                   </HBox>
                </children></AnchorPane>

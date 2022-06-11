@@ -14,6 +14,7 @@ public class Main extends Application {
 
     private Stage primaryStage;
 	private BorderPane rootLayout;
+	private MenuController menuController;
 
 	public Main() {
 	}
@@ -27,8 +28,9 @@ public class Main extends Application {
 			rootLayout = (BorderPane) loader.load();
 
 			// Pasamos al controlador de menu el objeto con el BorderPane principal
-			MenuController menuController = loader.getController();
+			menuController = loader.getController();
 			menuController.setRootLayout(rootLayout);
+			menuController.setMain(this);
 
 			// Mostramos la escena del BorderPane de la variable rootLayot
 			Scene scene = new Scene(rootLayout);
@@ -42,6 +44,14 @@ public class Main extends Application {
 
 	public static void main(String[] args) {
 		launch(args);
+	}
+
+	public Stage getPrimaryStage() {
+		return primaryStage;
+	}
+
+	public MenuController getMenuController() {
+		return menuController;
 	}
 
 }

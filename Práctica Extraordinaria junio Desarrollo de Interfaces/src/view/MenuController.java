@@ -8,9 +8,12 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import model.Trabajador;
 
 public class MenuController {
@@ -46,8 +49,39 @@ public class MenuController {
 
             TrabajadorOverviewController controller = loader.getController();
             controller.setTrabajadorTable(trabajadorData);
+            controller.setMain(mainApp);
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    @FXML
+    public boolean abrirEditar(Trabajador trabajador) {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MenuController.class.getResource("pantallaEditar.fxml"));
+            AnchorPane page = (AnchorPane) loader.load();
+
+            // Create the dialog Stage.
+            Stage dialogStage = new Stage();
+            dialogStage.setTitle("Editar Trabajador");
+            dialogStage.initModality(Modality.WINDOW_MODAL);
+            dialogStage.initOwner(mainApp.getPrimaryStage());
+            Scene scene = new Scene(page);
+            dialogStage.setScene(scene);
+
+            // Set the person into the controller.
+            EditarController controller = loader.getController();
+            controller.setDialogStage(dialogStage);
+            controller.setTrabajador(trabajador);
+
+            // Show the dialog and wait until the user closes it
+            dialogStage.showAndWait();
+
+            return controller.isOkClicked();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
         }
     }
 
@@ -91,6 +125,10 @@ public class MenuController {
 
     public void setRootLayout(BorderPane rootLayout) {
         this.rootLayout = rootLayout;
+    }
+
+    public void setMain(Main mainApp) {
+        this.mainApp = mainApp;
     }
 
 }
