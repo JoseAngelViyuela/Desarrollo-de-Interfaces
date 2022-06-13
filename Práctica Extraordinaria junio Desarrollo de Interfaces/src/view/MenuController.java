@@ -87,12 +87,14 @@ public class MenuController {
 
     @FXML
     void abrirTutorial(ActionEvent event) {
-        try {
+    	try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MenuController.class.getResource("pantallaTutorial.fxml"));
             AnchorPane abrir = (AnchorPane) loader.load();
 
             rootLayout.setCenter(abrir);
+
+            TutorialController controller = loader.getController();
         } catch (IOException e) {
             e.printStackTrace();
         }
